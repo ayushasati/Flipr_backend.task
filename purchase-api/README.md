@@ -21,7 +21,7 @@ Status Code: 200 (OK)
 Body:
 json
 
-Copy code
+code
 [
   {
   
