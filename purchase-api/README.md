@@ -1,40 +1,79 @@
-# Fetch Customers by City
+# Purchase API Documentation
+
+1. Add Purchase
 
 Endpoint:
 
-HTTP Method: GET
+HTTP Method: POST
 
-URL: http://localhost:8080/api/customers?city=Indore
-
+URL: http://localhost:8080/api/purchases
 Description:
+This API endpoint allows you to add a new purchase order to the system.
 
-This API endpoint allows you to fetch customers based on the specified city.
+Request:
+
+
+Method: POST
+URL: http://localhost:8080/api/purchases
+Headers:
+Content-Type: application/json
+Body:
+Raw (JSON)
+json
+ code
+{
+
+  "productName": "ProductA",
+  "quantity": 5,
+  "pricing": 50.00,
+  "mrp": 60.00,
+  "customerId": "123"
+  
+}
+Response:
+
+
+Status Code: 201 (Created)
+Body:
+json
+code
+
+{
+  "purchaseOrderId": "456",
+  "productName": "ProductA",
+  "quantity": 5,
+  "pricing": 50.00,
+  "mrp": 60.00,
+  "customerId": "123"
+}
+2. Fetch Purchases
+Endpoint:
+
+HTTP Method: GET
+URL: http://localhost:8080/api/purchases
+Description:
+This API endpoint allows you to fetch all purchase orders.
 
 Request:
 
 Method: GET
-URL: http://localhost:8080/api/customers?city=Indore
+URL: http://localhost:8080/api/purchases
 Response:
 
 Status Code: 200 (OK)
-
 Body:
 json
-
-code
+Copy code
 [
   {
   
-    "id": "123",
-    
-    "customerName": "Ayush",
-    
-    "email": "developerayush3@gmail.com",
-    
-    "mobileNumber": "9753002885",
-    
-    "city": "Indore"
+    "purchaseOrderId": "456",
+    "productName": "ProductA",
+    "quantity": 5,
+    "pricing": 50.00,
+    "mrp": 60.00,
+    "customerId": "123"
     
   },
-  // Additional customer objects with the same city
+
 ]
